@@ -1,27 +1,15 @@
-use std::ffi::c_void;
-
-
-fn main() {
-    
-    let mut greeting =String::from("hello world!");
-    change(&mut greeting);
-    change1(&mut greeting);
-    change2(&mut greeting);
-    println!("{}",greeting);
-    
-
-
+struct User {
+    name:String,
+    age:u8,
+    vote:bool,
+    email:String
 }
-fn change(new_value : &mut String){
-    new_value.push_str("hiiii");
-    println!("{}",new_value);
-}
-fn change1( new_value : &mut String){
-    new_value.push_str("hiiii2");
-   println!("{}",new_value)
-}
-fn change2( new_value : &mut String){
-    new_value.push_str("hiiii33");
-   println!("{}",new_value);
-
+fn main(){
+    let user =User{
+        name:String::from("rohit kumar barada"),
+        vote:true,
+        age:21,
+        email:String::from("rohitkumar@gmail.com")
+    };
+    println!("{} is {} years old",user.name,user.age);
 }

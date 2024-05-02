@@ -1,15 +1,16 @@
-struct User {
-    name:String,
-    age:u8,
-    vote:bool,
-    email:String
+struct Plot {
+    width :u32,
+    height:u32
+}
+impl Plot {
+    fn area(&self)->u32{
+       return self.width*self.height;
+    }
 }
 fn main(){
-    let user =User{
-        name:String::from("rohit kumar barada"),
-        vote:true,
-        age:21,
-        email:String::from("rohitkumar@gmail.com")
+    let plot1 = Plot {
+        width:32,
+        height:44
     };
-    println!("{} is {} years old",user.name,user.age);
+    println!("width :{} ,height :{}, area : {}",plot1.width,plot1.height,plot1.area())
 }

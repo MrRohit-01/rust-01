@@ -6,22 +6,25 @@ enum Shapes{
   Square(f32)
 
 }
-
-   fn area(shape : Shapes)->f32 {
-   match shape {
+impl Shapes{
+  fn area(&self)->f32 {
+   match self {
         Shapes::Circle(radius) => 3.14 * radius * radius,
         Shapes::Rectangle(width,height) =>width * height,
         Shapes::Square(side) => side * side,
 
     }
+   
+}
+
    }
 
 fn main(){
     let square = Shapes::Square(170.0);
     let rectangle = Shapes::Rectangle(170.0,10.0);
     let circle = Shapes::Circle(170.0);
-    println!("{}",area(square));
-    println!("{}",area(rectangle));
-    println!("{}",area(circle))
+    println!("{}",square.area());
+    println!("{}",rectangle.area());
+    println!("{}",circle.area())
 }
 

@@ -1,24 +1,27 @@
 
 
-enum Direction{
-  up,
-  down,
-  left,
-  right
+enum Shapes{
+  Circle(f32),
+  Rectangle(f32,f32),
+  Square(f32)
+
 }
-impl Direction {
-   fn default(&self)->isize{
-    match self {
-        Direction::up => 1,
-        Direction::down => 2,
-        Direction::left => 3,
-        Direction::right => 4
+
+   fn area(shape : Shapes)->f32 {
+   match shape {
+        Shapes::Circle(radius) => 3.14 * radius * radius,
+        Shapes::Rectangle(width,height) =>width * height,
+        Shapes::Square(side) => side * side,
+
     }
    }
-}
+
 fn main(){
-    let north =Direction::up;
-let default_value = north.default();
-println!("{}",default_value)
+    let square = Shapes::Square(170.0);
+    let rectangle = Shapes::Rectangle(170.0,10.0);
+    let circle = Shapes::Circle(170.0);
+    println!("{}",area(square));
+    println!("{}",area(rectangle));
+    println!("{}",area(circle))
 }
 
